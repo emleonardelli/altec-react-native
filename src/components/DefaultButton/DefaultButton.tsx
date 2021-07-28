@@ -13,8 +13,8 @@ const typeButton = (type: String) => {
   const style = {
     backgroundColor: '#FF0000',
   };
-  if (type == 'primary') style.backgroundColor = '#FF0000';
-  if (type == 'secondary') style.backgroundColor = '#00FF00';
+  if (type == 'primary') style.backgroundColor = '#FF0044';
+  if (type == 'secondary') style.backgroundColor = '#00FF88';
   return style;
 };
 
