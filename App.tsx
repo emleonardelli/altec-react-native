@@ -1,30 +1,48 @@
-import React from 'react';
-import {Alert, Modal, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Modal, StyleSheet, Text, View} from 'react-native';
 import {DefaultButton} from './src/components';
 
-import {DEVICE_HEIGHT, DEVICE_WIDTH} from './src/utils/dimensions';
 import {colors} from './src/utils/theme';
 
-const showAlert = () => {
-  Alert.alert('hola');
-};
-
 const App = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const showModal = () => setModalVisible(true);
+  const closeModal = () => setModalVisible(false);
+
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.tittle}>Hola!</Text>
-      <Text>Subtitulo</Text>
-      <Text>
-        {DEVICE_HEIGHT} {DEVICE_WIDTH}
-      </Text>
-      <DefaultButton
-        type="primary"
-        texto="Hola!"
-        onPress={showAlert}></DefaultButton>
+      <Text style={styles.tittle}>Hola mundo!</Text>
       <DefaultButton
         type="secondary"
-        texto="Mundo!"
-        onPress={showAlert}></DefaultButton>
+        texto="Abrir!"
+        onPress={showModal}></DefaultButton>
+
+      <Modal animationType="fade" transparent visible={isModalVisible}>
+        <View
+          style={{
+            backgroundColor: 'rgba(0,0,0,0.3)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flex: 1,
+            width: '100%',
+          }}>
+          <View
+            style={{
+              borderRadius: 15,
+              backgroundColor: '#FFFFFF',
+              width: '90%',
+              paddingVertical: 10,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text>Hola Mundo!</Text>
+            <DefaultButton
+              type="primary"
+              texto="Aceptar!"
+              onPress={closeModal}></DefaultButton>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
