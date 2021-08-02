@@ -1,15 +1,14 @@
 import React from 'react';
-import {Text, TouchableOpacity, ViewStyle} from 'react-native';
-import {colors} from '../../utils/theme';
+import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 
 interface Props {
-  texto: String;
+  texto: string;
   onPress: () => void;
-  type: String;
+  type: string;
 }
 
-const typeButton = (type: String) => {
+const typeButton = (type: string) => {
   const style = {
     backgroundColor: '#FF0000',
   };

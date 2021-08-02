@@ -3,6 +3,8 @@ import {colors} from '../../utils/theme';
 
 export const styles = StyleSheet.create({
   mainContainer: {
+    marginBottom: 10,
+    marginTop: 10,
     borderRadius: 10,
     paddingTop: 10,
     textAlign: 'center',
