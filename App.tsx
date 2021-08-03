@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {DefaultButton} from './src/components';
+import {DefaultButton, Typography} from './src/components';
 import {DefaultModal} from './src/components/DefaultModal/DefaultModal';
 
 import {colors} from './src/utils/theme';
@@ -12,7 +12,10 @@ const App = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.tittle}>Hola mundo!</Text>
+      <Typography color={colors.mainOrange} size={30}>
+        Hola mundo
+      </Typography>
+      <Typography>Subtitulo</Typography>
       <DefaultButton
         type="secondary"
         texto="Abrir!"
