@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
+import Typography from '../Typography';
 import {styles} from './styles';
 
 interface Props {
@@ -22,7 +23,7 @@ export const DefaultButton = ({onPress, texto, type}: Props) => {
     <TouchableOpacity
       style={[styles.mainContainer, typeButton(type)]}
       onPress={onPress}>
-      <Text style={styles.text}>{texto}</Text>
+      <Typography size={20}>{texto}</Typography>
     </TouchableOpacity>
   );
 };

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
 import {DefaultButton, Typography} from './src/components';
 import {DefaultModal} from './src/components/DefaultModal/DefaultModal';
 
@@ -11,22 +11,60 @@ const App = () => {
   const closeModal = () => setModalVisible(false);
 
   return (
-    <View style={styles.mainContainer}>
-      <Typography color={colors.mainOrange} size={30}>
-        Hola mundo
-      </Typography>
-      <Typography>Subtitulo</Typography>
-      <DefaultButton
-        type="secondary"
-        texto="Abrir!"
-        onPress={showModal}></DefaultButton>
-      <DefaultModal
-        primaryButtonText="Ok"
-        onPressPrimaryButton={closeModal}
-        secondaryButtonText="Cancel"
-        onPressSecondaryButton={closeModal}
-        visible={isModalVisible}></DefaultModal>
-    </View>
+    <SafeAreaView style={styles.mainContainer}>
+      <ScrollView>
+        <Typography color={colors.mainOrange} size={30}>
+          Hola mundo
+        </Typography>
+        <Typography variant="bold">Subtitulo</Typography>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
+        <DefaultModal
+          primaryButtonText="Ok"
+          onPressPrimaryButton={closeModal}
+          secondaryButtonText="Cancel"
+          onPressSecondaryButton={closeModal}
+          visible={isModalVisible}></DefaultModal>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
