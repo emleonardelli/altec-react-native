@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
+import {StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import {DefaultButton, Typography} from './src/components';
 import {DefaultModal} from './src/components/DefaultModal/DefaultModal';
 
@@ -11,12 +11,19 @@ const App = () => {
   const closeModal = () => setModalVisible(false);
 
   return (
-    <SafeAreaView style={styles.mainContainer}>
-      <ScrollView>
+    <React.Fragment>
+      <SafeAreaView style={{backgroundColor: colors.veryLightBlue}} />
+      <ScrollView
+        style={{backgroundColor: colors.veryLightBlue}}
+        contentContainerStyle={styles.mainContainer}>
         <Typography color={colors.mainOrange} size={30}>
           Hola mundo
         </Typography>
         <Typography variant="bold">Subtitulo</Typography>
+        <DefaultButton
+          type="secondary"
+          texto="Abrir!"
+          onPress={showModal}></DefaultButton>
         <DefaultButton
           type="secondary"
           texto="Abrir!"
@@ -64,7 +71,7 @@ const App = () => {
           onPressSecondaryButton={closeModal}
           visible={isModalVisible}></DefaultModal>
       </ScrollView>
-    </SafeAreaView>
+    </React.Fragment>
   );
 };
 
@@ -75,6 +82,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.veryLightBlue,
     flex: 1,
     width: '100%',
+    paddingTop: 50,
+    paddingBottom: 30,
   },
   tittle: {
     color: colors.mainOrange,
